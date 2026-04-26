@@ -1,11 +1,11 @@
 /* style.css */
 :root {
-    --text-main: #1d1d1f; /* 苹果经典的深灰黑色 */
-    --text-light: #86868b;
-    --accent-color: #0071e3; /* 苹果蓝 */
-    /* 苹果级磨砂玻璃质感参数 */
-    --glass-bg: rgba(255, 255, 255, 0.45);
-    --glass-border: rgba(255, 255, 255, 0.6);
+    --text-main: #1d1d1f;
+    --text-light: #515154;
+    --accent-color: #0071e3;
+    /* 毛玻璃基础参数 */
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.7);
 }
 
 * {
@@ -15,62 +15,62 @@
 }
 
 body {
-    /* 使用苹果默认字体 SF Pro */
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, sans-serif;
     color: var(--text-main);
-    background-color: #f5f5f7; /* 极简的浅灰背景 */
-    line-height: 1.5;
+    background-color: #f5f5f7;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* 制造毛玻璃折射效果的背景光晕 */
+/* === 高级极光背景光晕 === 
+   加入了紫、粉、蓝三色，透过毛玻璃折射会显得非常高端 */
 .bg-shape1 {
-    position: fixed;
-    top: -10%; left: -10%;
-    width: 50vw; height: 50vw;
-    background: rgba(169, 210, 255, 0.4); /* 极淡的蓝色 */
-    border-radius: 50%;
-    filter: blur(100px);
-    z-index: -1;
+    position: fixed; top: -10%; left: -5%;
+    width: 45vw; height: 45vw;
+    background: rgba(88, 166, 255, 0.35); /* 青蓝色 */
+    border-radius: 50%; filter: blur(120px); z-index: -1;
 }
 
 .bg-shape2 {
-    position: fixed;
-    bottom: -10%; right: -10%;
-    width: 60vw; height: 60vw;
-    background: rgba(226, 232, 255, 0.5); /* 极淡的紫蓝色 */
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: -1;
+    position: fixed; bottom: 10%; right: -5%;
+    width: 50vw; height: 50vw;
+    background: rgba(200, 140, 255, 0.25); /* 柔紫色 */
+    border-radius: 50%; filter: blur(130px); z-index: -1;
 }
 
-/* 核心：Apple风格毛玻璃卡片 */
+.bg-shape3 {
+    position: fixed; top: 40%; left: 30%;
+    width: 40vw; height: 40vw;
+    background: rgba(255, 170, 120, 0.15); /* 蜜桃暖色 */
+    border-radius: 50%; filter: blur(140px); z-index: -1;
+}
+
+/* 毛玻璃核心 */
 .apple-glass {
     background: var(--glass-bg);
-    /* 关键属性：饱和度提升+高强度模糊 */
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    backdrop-filter: blur(40px) saturate(200%);
     border: 1px solid var(--glass-border);
-    border-radius: 28px; /* 苹果喜欢的大圆角 */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     padding: 2rem;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .apple-glass:hover {
-    transform: scale(1.02); /* 鼠标悬停时轻微放大，手感极佳 */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px); /* 改为向上微微浮起，手感更细腻 */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 }
 
-/* 导航栏 */
+/* 导航栏：变薄变精致 */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2.5rem;
-    margin: 2rem auto;
+    padding: 0.6rem 2rem; /* 大幅减小上下高度 */
+    margin: 1.5rem auto 2.5rem auto;
     max-width: 1100px;
-    border-radius: 40px;
+    border-radius: 100px; /* 胶囊形状 */
 }
 
 nav a {
@@ -84,80 +84,103 @@ nav a {
 
 nav a:hover { color: var(--accent-color); }
 
-/* ==== Bento Box 网格排版系统 ==== */
+/* ==== 全新 Bento Box 网格系统 ==== */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(200px, auto);
+    grid-auto-rows: minmax(180px, auto); /* 调整了基础高度 */
     gap: 1.5rem;
     max-width: 1100px;
     margin: 0 auto 3rem auto;
     padding: 0 1.5rem;
 }
 
-/* 卡片占据的网格比例 */
-.bento-hero { grid-column: span 3; grid-row: span 2; display: flex; align-items: center; gap: 2rem;}
+/* 新版比例：1 + 2 + 1 = 4列 */
+.bento-pic { grid-column: span 1; grid-row: span 1; padding: 0.5rem; display: flex;}
+.bento-hero { grid-column: span 2; grid-row: span 1; display: flex; flex-direction: column; justify-content: center;}
 .bento-connect { grid-column: span 1; grid-row: span 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;}
-.bento-edu { grid-column: span 1; grid-row: span 2; }
-.bento-research { grid-column: span 3; grid-row: span 1; }
+
+/* 第二/三排比例：2 + 2 = 4列 */
+.bento-edu { grid-column: span 2; grid-row: span 1; }
+.bento-awards { grid-column: span 2; grid-row: span 1; }
+.bento-projects { grid-column: span 2; grid-row: span 1; }
+.bento-services { grid-column: span 2; grid-row: span 1; }
+
+/* 底部全宽：4列 */
 .bento-pubs { grid-column: span 4; grid-row: span 1; }
 
-/* 内部文字样式 */
+/* 内部细节样式 */
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
+/* 新的照片相框样式，替代突兀的圆 */
 .profile-pic {
-    width: 180px; height: 180px;
-    border-radius: 50%;
+    width: 100%; height: 100%;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 22px; /* 和外部大圆角形成呼应 */
+}
+
+/* 渐变名字，打破色彩单一 */
+.gradient-text {
+    background: linear-gradient(135deg, #0071e3 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-text h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: -0.04em;
     margin-bottom: 0.5rem;
 }
 
-.hero-text p { color: var(--text-light); font-size: 1.1rem; }
+/* 小标签：增加彩色点缀 */
+.tag {
+    display: inline-block;
+    background: rgba(0, 113, 227, 0.1);
+    color: var(--accent-color);
+    padding: 0.2rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
 
-/* 社交按钮 */
 .icon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px; height: 50px;
-    border-radius: 50%;
-    background: white;
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 45px; height: 45px; border-radius: 50%;
+    background: white; color: var(--text-main);
+    text-decoration: none; font-size: 1.2rem; margin: 0.4rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04); transition: all 0.3s;
 }
 .icon-btn:hover { background: var(--accent-color); color: white; transform: translateY(-3px);}
 
 .cv-btn {
-    display: inline-block;
-    margin-top: 1rem; padding: 0.6rem 1.5rem;
+    display: inline-block; margin-top: 0.8rem; padding: 0.6rem 1.5rem;
     background: var(--text-main); color: white;
-    text-decoration: none; border-radius: 30px; font-weight: 500;
+    text-decoration: none; border-radius: 30px; font-weight: 500; font-size: 0.95rem;
 }
 .cv-btn:hover { background: var(--accent-color); }
 
-/* 列表样式 */
-ul { padding-left: 1.2rem; color: var(--text-light); font-size: 0.95rem; }
-li { margin-bottom: 0.5rem; }
+.item-list { padding-left: 1rem; color: var(--text-light); font-size: 0.95rem; }
+.item-list li { margin-bottom: 0.5rem; }
 
-/* 响应式设计：手机上自动变为单列 */
+/* 响应式排版适配 */
 @media (max-width: 900px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-pic { grid-column: span 1; }
+    .bento-connect { grid-column: span 1; }
+    .bento-hero, .bento-edu, .bento-awards, .bento-projects, .bento-services, .bento-pubs { grid-column: span 2; }
+}
+@media (max-width: 600px) {
     .bento-grid { grid-template-columns: 1fr; }
-    .bento-hero { grid-column: span 1; flex-direction: column; text-align: center; }
-    .bento-connect, .bento-edu, .bento-research, .bento-pubs { grid-column: span 1; }
+    .bento-pic, .bento-connect { grid-column: span 1; }
+    .bento-hero { grid-column: span 1; text-align: center; }
 }

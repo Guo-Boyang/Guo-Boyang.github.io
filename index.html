@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Boyang Guo - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- 背景光晕，塑造毛玻璃效果 -->
+    <!-- 三色极光光晕背景 -->
     <div class="bg-shape1"></div>
     <div class="bg-shape2"></div>
+    <div class="bg-shape3"></div>
 
-    <!-- 导航栏 -->
+    <!-- 更薄、更精致的胶囊导航栏 -->
     <nav class="apple-glass">
-        <div style="font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em;">Your Name</div>
+        <div style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em;">Boyang Guo</div>
         <div>
             <a href="index.html">Home</a>
             <a href="blog.html">Blog</a>
@@ -23,74 +24,119 @@
         </div>
     </nav>
 
-    <!-- Bento Box 网格系统 -->
+    <!-- 完美比例网格排版系统 -->
     <div class="bento-grid">
         
-        <!-- 左上大卡片：个人简介 -->
-        <div class="apple-glass bento-hero">
+        <!-- 卡片1：照片画框（取代突兀的椭圆） -->
+        <div class="apple-glass bento-pic">
             <img src="profile.jpg" alt="Profile" class="profile-pic">
+        </div>
+
+        <!-- 卡片2：名字与简介（变宽，不再显得太空） -->
+        <div class="apple-glass bento-hero">
             <div class="hero-text">
-                <h1>Hi, I'm Your Name</h1>
-                <p>Sophomore in Electrical and Computer Engineering</p>
-                <p style="margin-top: 1rem; color: var(--text-main);">
-                    I am an undergrad at SJTU passionate about applying mathematical models to real-world engineering. My focus is on signal processing, robotics, and machine learning.
+                <span class="tag">ECE Undergraduate @ SJTU</span>
+                <h1>Hi, I'm <span class="gradient-text">Boyang Guo</span></h1>
+                <p style="margin-top: 0.5rem; color: var(--text-light);">
+                    I am passionate about applying mathematical models to real-world engineering. My research interests lie broadly in mathematical foundations and applications in machine learning.
                 </p>
             </div>
         </div>
 
-        <!-- 右上小卡片：快速联系/图标 -->
+        <!-- 卡片3：联系方式 -->
         <div class="apple-glass bento-connect">
-            <h2>Connect</h2>
+            <h2 style="margin-bottom: 0.5rem;">Connect</h2>
             <div>
-                <a href="mailto:your@sjtu.edu.cn" class="icon-btn"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/yourid" class="icon-btn"><i class="fab fa-github"></i></a>
+                <a href="mailto:tonydomo@sjtu.edu.cn" class="icon-btn"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/Guo-Boyang" class="icon-btn"><i class="fab fa-github"></i></a>
             </div>
-            <a href="cv.pdf" class="cv-btn" target="_blank">Download CV</a>
+            <a href="cv.pdf" class="cv-btn" target="_blank">View CV</a>
         </div>
 
-        <!-- 左下高卡片：教育背景 -->
+        <!-- 卡片4：教育背景（拉宽，有充足空间） -->
         <div class="apple-glass bento-edu">
-            <h2>Education</h2>
-            <div style="font-weight: 600;">Shanghai Jiao Tong University</div>
-            <div style="font-size: 0.85rem; color: var(--accent-color); margin-bottom: 1rem;">Sep 2022 - Present</div>
-            <ul>
-                <li>B.S. in ECE</li>
-                <li>GPA: 3.9/4.0</li>
-                <li>National Scholarship</li>
-                <li>Dean's List</li>
+            <h2><i class="fas fa-graduation-cap" style="color: var(--accent-color);"></i> Education</h2>
+            <div style="margin-bottom: 1rem;">
+                <div style="font-weight: 600; display: flex; justify-content: space-between;">
+                    <span>Shanghai Jiao Tong University</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-color);">2024 - 2028</span>
+                </div>
+                <div style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 0.5rem;">Global College, B.S. in Electrical and Computer Engineering</div>
+                <ul class="item-list">
+                    <li><strong>GPA:</strong> -.-/4.0 (Top 5%)</li>
+                    <li><strong>Core Courses:</strong> Data Structures, Signals and Systems, Computer Organization</li>
+                </ul>
+                <div style="font-weight: 600; display: flex; justify-content: space-between;">
+                    <span>University of Michigan</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-color);">2026 - 2028</span>
+                </div>
+                <div style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 0.5rem;">B.S. in Mathematics (Honors Program)</div>
+                <ul class="item-list">
+                    <li><strong>GPA:</strong> -.-/4.0</li>
+                    <li><strong>Core Courses:</strong> Real Analysis, Differential Geometry, Topology</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 卡片5：荣誉与奖项 (新增) -->
+        <div class="apple-glass bento-awards">
+            <h2><i class="fas fa-award" style="color: #f59e0b;"></i> Honors & Awards</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">Undergraduate Excellent Scholarship</div>
+                    <div style="font-size: 0.85rem; color: var(--text-light);">SJTU | 2025</div>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">GC Student Development Scholarship (Service Program)</div>
+                    <div style="font-size: 0.85rem; color: var(--text-light);">Global College, SJTU | 2025</div>
+                </li>
             </ul>
         </div>
 
-        <!-- 右侧宽卡片：精选项目 -->
-        <div class="apple-glass bento-research">
-            <h2>Selected Projects</h2>
+        <!-- 卡片6：项目经历 -->
+        <div class="apple-glass bento-projects">
+            <h2><i class="fas fa-microchip" style="color: #8b5cf6;"></i> Selected Projects (Under Construction)</h2>
             <div style="margin-bottom: 1rem;">
-                <span style="font-weight: 600;">Autonomous Robot Navigation</span> 
-                <span style="font-size: 0.85rem; color: var(--text-light); float: right;">2024</span>
-                <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 0.3rem;">
-                    Designed an obstacle avoidance algorithm using RL. Improved success rate by 15% in complex simulated environments.
+                <div style="font-weight: 600; font-size: 0.95rem;">Autonomous Robot Navigation</div>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.3rem;">
+                    Designed an obstacle avoidance algorithm using Reinforcement Learning. Improved success rate by 15% in complex simulated environments.
                 </p>
             </div>
             <div>
-                <span style="font-weight: 600;">Smart IoT Sensor Hub</span>
-                <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 0.3rem;">
+                <div style="font-weight: 600; font-size: 0.95rem;">Smart IoT Sensor Hub</div>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.3rem;">
                     Built a low-power hub with Raspberry Pi and C++ to handle real-time signal processing.
                 </p>
             </div>
         </div>
 
-        <!-- 底部通栏大卡片：学术发表 -->
+        <!-- 卡片7：社会服务与活动 (新增) -->
+        <div class="apple-glass bento-services">
+            <h2><i class="fas fa-hands-helping" style="color: #10b981;"></i> Services & Activities</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">Assistant Vice President of Project Department</div>
+                    <div style="font-size: 0.85rem; color: var(--text-light);">SSTIA, Global College | Fall 2024 - Present</div>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">Teaching Assistant</div>
+                    <div style="font-size: 0.85rem; color: var(--text-light);">MATH2850J Linear Algebra and Functions of Multiple Variables (Honors) | Summer 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 卡片8：学术发表 (全宽) -->
         <div class="apple-glass bento-pubs">
-            <h2>Publications</h2>
-            <div style="display: flex; gap: 1rem; align-items: start;">
-                <div style="background: rgba(0,0,0,0.05); padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold;">[1]</div>
+            <h2><i class="fas fa-book-open" style="color: #ef4444;"></i> Publications (Under Construction)</h2>
+            <div style="display: flex; gap: 1rem; align-items: start; margin-top: 1rem;">
+                <div style="background: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">[1]</div>
                 <div>
-                    <strong style="font-size: 1.05rem;">Paper Title Goes Here: An Innovative Approach</strong><br>
-                    <span style="color: var(--text-light); font-size: 0.95rem;"><u>Your Name</u>, Co-author 1, Co-author 2.</span><br>
+                    <strong style="font-size: 1.05rem;">Paper Title Goes Here: An Innovative Approach in ECE</strong><br>
+                    <span style="color: var(--text-light); font-size: 0.95rem;"><u>Boyang Guo</u>, Co-author 1, Co-author 2.</span><br>
                     <span style="font-size: 0.95rem;"><em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2024.</span><br>
-                    <div style="margin-top: 0.5rem;">
-                        <a href="#" style="color: var(--accent-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; margin-right: 1rem;">[PDF]</a>
-                        <a href="#" style="color: var(--accent-color); text-decoration: none; font-size: 0.9rem; font-weight: 600;">[GitHub]</a>
+                    <div style="margin-top: 0.6rem;">
+                        <a href="#" style="color: var(--accent-color); text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-right: 1rem; background: rgba(0, 113, 227, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px;">[PDF]</a>
+                        <a href="#" style="color: var(--text-main); text-decoration: none; font-size: 0.85rem; font-weight: 600; background: white; padding: 0.3rem 0.8rem; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">[GitHub]</a>
                     </div>
                 </div>
             </div>

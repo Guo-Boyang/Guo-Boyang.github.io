@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Your Name</title>
+    <title>Blog - Boyang Guo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- 同步三色极光光晕背景 -->
     <div class="bg-shape1"></div>
     <div class="bg-shape2"></div>
+    <div class="bg-shape3"></div>
 
     <nav class="apple-glass">
-        <div style="font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em;">Your Name</div>
+        <div style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em;">Boyang Guo</div>
         <div>
             <a href="index.html">Home</a>
             <a href="blog.html">Blog</a>
@@ -20,26 +22,27 @@
         </div>
     </nav>
 
-    <!-- 限制博客列表的最大宽度，阅读体验更好 -->
     <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
         
         <header class="apple-glass" style="text-align: center; margin-bottom: 2rem;">
-            <h1 style="font-weight: 700;">Notes & Thoughts</h1>
+            <h1 style="font-weight: 700; font-size: 2.2rem; margin-bottom: 0.5rem;">Notes & Thoughts</h1>
             <p style="color: var(--text-light);">Mathematics, Engineering, and Coding.</p>
         </header>
 
         <article class="apple-glass" style="margin-bottom: 1.5rem;">
             <a href="#" style="text-decoration: none; color: inherit;">
-                <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">March 15, 2024</span>
-                <h3 style="margin: 0.5rem 0;">Understanding the Fourier Transform</h3>
+                <span class="tag" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Signal Processing</span>
+                <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 500; float: right;">March 15, 2024</span>
+                <h3 style="margin: 0.5rem 0; font-size: 1.2rem;">Understanding the Fourier Transform</h3>
                 <p style="color: var(--text-light); font-size: 0.95rem;">An intuitive breakdown of how we map signals from the time domain to the frequency domain...</p>
             </a>
         </article>
 
         <article class="apple-glass" style="margin-bottom: 1.5rem;">
             <a href="#" style="text-decoration: none; color: inherit;">
-                <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">February 20, 2024</span>
-                <h3 style="margin: 0.5rem 0;">My Experience Building a RISC-V CPU</h3>
+                <span class="tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Hardware</span>
+                <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 500; float: right;">February 20, 2024</span>
+                <h3 style="margin: 0.5rem 0; font-size: 1.2rem;">My Experience Building a RISC-V CPU</h3>
                 <p style="color: var(--text-light); font-size: 0.95rem;">Documenting the challenges and bugs I encountered while implementing a pipeline RISC-V processor...</p>
             </a>
         </article>
