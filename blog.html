@@ -8,8 +8,11 @@
 </head>
 <body>
 
-    <nav class="glass-panel" style="padding: 1rem 2rem; margin-bottom: 2rem;">
-        <div style="font-weight: bold; font-size: 1.2rem;">Your Name</div>
+    <div class="bg-shape1"></div>
+    <div class="bg-shape2"></div>
+
+    <nav class="apple-glass">
+        <div style="font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em;">Your Name</div>
         <div>
             <a href="index.html">Home</a>
             <a href="blog.html">Blog</a>
@@ -17,29 +20,27 @@
         </div>
     </nav>
 
-    <div class="container">
-        <!-- 博客说明 -->
-        <header class="glass-panel text-center">
-            <h1>Notes & Thoughts</h1>
-            <p style="color: var(--text-light);">A collection of my thoughts on mathematics, engineering, and coding.</p>
+    <!-- 限制博客列表的最大宽度，阅读体验更好 -->
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
+        
+        <header class="apple-glass" style="text-align: center; margin-bottom: 2rem;">
+            <h1 style="font-weight: 700;">Notes & Thoughts</h1>
+            <p style="color: var(--text-light);">Mathematics, Engineering, and Coding.</p>
         </header>
 
-        <!-- 博客文章列表 -->
-        <!-- 第一篇文章 -->
-        <article class="glass-panel">
-            <a href="#" class="blog-post-link">
-                <span class="blog-date">March 15, 2024</span>
-                <h3>Understanding the Fourier Transform in Signal Processing</h3>
-                <p>An intuitive breakdown of how we map signals from the time domain to the frequency domain, and why it matters in modern ECE...</p>
+        <article class="apple-glass" style="margin-bottom: 1.5rem;">
+            <a href="#" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">March 15, 2024</span>
+                <h3 style="margin: 0.5rem 0;">Understanding the Fourier Transform</h3>
+                <p style="color: var(--text-light); font-size: 0.95rem;">An intuitive breakdown of how we map signals from the time domain to the frequency domain...</p>
             </a>
         </article>
 
-        <!-- 第二篇文章 -->
-        <article class="glass-panel">
-            <a href="#" class="blog-post-link">
-                <span class="blog-date">February 20, 2024</span>
-                <h3>My Experience Building a RISC-V CPU</h3>
-                <p>In this post, I document the challenges and bugs I encountered while implementing a 5-stage pipeline RISC-V processor in Verilog...</p>
+        <article class="apple-glass" style="margin-bottom: 1.5rem;">
+            <a href="#" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600;">February 20, 2024</span>
+                <h3 style="margin: 0.5rem 0;">My Experience Building a RISC-V CPU</h3>
+                <p style="color: var(--text-light); font-size: 0.95rem;">Documenting the challenges and bugs I encountered while implementing a pipeline RISC-V processor...</p>
             </a>
         </article>
 
