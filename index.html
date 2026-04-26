@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Academic Website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入FontAwesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="glass-panel" style="padding: 1rem 2rem; margin-bottom: 2rem;">
+        <div style="font-weight: bold; font-size: 1.2rem;">Your Name</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 头部简介 (Hero Section) -->
+        <header class="glass-panel hero">
+            <!-- 请将 profile.jpg 替换为你自己的照片 -->
+            <img src="profile.jpg" alt="Your Name" class="profile-pic">
+            <div class="hero-text">
+                <h1>Your Name</h1>
+                <p>Undergraduate Student in Electrical and Computer Engineering</p>
+                <p><i class="fas fa-university"></i> Shanghai Jiao Tong University (SJTU)</p>
+                <a href="cv.pdf" class="btn" target="_blank"><i class="fas fa-file-pdf"></i> Download CV</a>
+                <a href="mailto:your.email@sjtu.edu.cn" class="btn" style="background: white; color: var(--accent-color); border: 1px solid var(--accent-color);"><i class="fas fa-envelope"></i> Email Me</a>
+            </div>
+        </header>
+
+        <!-- About Me -->
+        <section class="glass-panel">
+            <h2>About Me</h2>
+            <p>I am currently a sophomore majoring in Electrical and Computer Engineering at Shanghai Jiao Tong University. My research interests lie broadly in [Your Interest 1], [Your Interest 2], and [Your Interest 3]. I am passionate about applying mathematical foundations to solve real-world engineering problems.</p>
+        </section>
+
+        <!-- Education -->
+        <section class="glass-panel">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-title">Shanghai Jiao Tong University</div>
+                <div class="item-meta">B.S. in Electrical and Computer Engineering | Sep 2022 - Present</div>
+                <ul>
+                    <li>GPA: 3.9/4.0 (Rank: X/XXX)</li>
+                    <li>Core Courses: Data Structures, Circuit Theory, Signal and Systems...</li>
+                    <li>Awards: National Scholarship (2023)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section class="glass-panel">
+            <h2>Publications</h2>
+            <div class="item">
+                <p><em>* indicates equal contribution</em></p>
+                <div style="margin-top: 1rem;">
+                    <strong>[1] Paper Title Goes Here</strong><br>
+                    <u>Your Name</u>, Co-author 1, Co-author 2.<br>
+                    <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2024.<br>
+                    <a href="#" style="color: var(--accent-color); text-decoration: none;">[PDF]</a> | <a href="#" style="color: var(--accent-color); text-decoration: none;">[Code]</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="glass-panel">
+            <h2>Selected Projects</h2>
+            <div class="item">
+                <div class="item-title">Project Name: Autonomous Robot Navigation</div>
+                <div class="item-meta">Research Assistant | Lab Name | Jan 2024 - Present</div>
+                <p>Designed and implemented an obstacle avoidance algorithm using Reinforcement Learning. Achieved a 15% increase in navigation success rate in simulated environments.</p>
+            </div>
+            <div class="item">
+                <div class="item-title">Project Name: Smart IoT Sensor Hub</div>
+                <div class="item-meta">Course Project | Oct 2023 - Dec 2023</div>
+                <p>Built a low-power sensor hub using Raspberry Pi and C++. Implemented a real-time data processing pipeline.</p>
+            </div>
+        </section>
+
+        <!-- Services & Activities -->
+        <section class="glass-panel">
+            <h2>Services & Activities</h2>
+            <ul>
+                <li><strong>Teaching Assistant:</strong> CS101 Introduction to Programming (Fall 2023)</li>
+                <li><strong>Member:</strong> SJTU IEEE Student Branch</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

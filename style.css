@@ -1,0 +1,179 @@
+/* style.css */
+:root {
+    --text-main: #2d3748;
+    --text-light: #4a5568;
+    --accent-color: #3182ce;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 明亮简约的极淡渐变背景 */
+    background: linear-gradient(135deg, #e2e8f0 0%, #edf2f7 50%, #e6f1ff 100%);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* 液态玻璃核心组件 */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.08);
+}
+
+/* 导航栏 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 1rem auto 2rem auto;
+    max-width: 900px;
+    border-radius: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    margin-left: 1.5rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* 页面主容器 */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 头部个人信息区 */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: var(--glass-shadow);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2b6cb0;
+    color: white;
+}
+
+/* 各个Section的内容排版 */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    padding-bottom: 0.5rem;
+}
+
+.item {
+    margin-bottom: 1.5rem;
+}
+
+.item-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.item-meta {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* 博客列表样式 */
+.blog-post-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-post-link h3 {
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+
+.blog-post-link:hover h3 {
+    color: var(--accent-color);
+}
+
+.blog-date {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+/* 响应式设计（适配手机） */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        border-radius: 20px;
+    }
+    nav div {
+        margin-left: 0;
+    }
+    nav a {
+        margin: 0 0.5rem;
+    }
+}
