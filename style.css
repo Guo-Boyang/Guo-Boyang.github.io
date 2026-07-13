@@ -1,11 +1,41 @@
 /* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
 :root {
-    --text-main: #1d1d1f;
-    --text-light: #515154;
-    --accent-color: #0071e3;
-    /* 毛玻璃基础参数 */
-    --glass-bg: rgba(255, 255, 255, 0.5);
-    --glass-border: rgba(255, 255, 255, 0.7);
+    /* 浅色主题 */
+    --bg-body: #F4F6F8;
+    --bg-card: #FFFFFF;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    
+    --color-primary: #2563EB;
+    --color-success: #059669;
+    --color-warning: #D97706;
+    --color-danger:  #DC2626;
+    
+    /* 更加细腻立体的现代阴影系统 */
+    --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] {
+    /* 深色主题 */
+    --bg-body: #090E17;
+    --bg-card: #151D2C;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border-color: #2A3649;
+    
+    --color-primary: #3B82F6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-danger:  #EF4444;
+    
+    --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -15,172 +45,364 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--text-main);
-    background-color: #f5f5f7;
+    background-color: var(--bg-body);
     line-height: 1.6;
-    overflow-x: hidden;
+    font-size: 14.5px; /* 字体微缩，提升信息密度 */
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* === 高级极光背景光晕 === 
-   加入了紫、粉、蓝三色，透过毛玻璃折射会显得非常高端 */
-.bg-shape1 {
-    position: fixed; top: -10%; left: -5%;
-    width: 45vw; height: 45vw;
-    background: rgba(88, 166, 255, 0.35); /* 青蓝色 */
-    border-radius: 50%; filter: blur(120px); z-index: -1;
+/* 加宽容器以支持双列布局 */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem 1.5rem;
 }
 
-.bg-shape2 {
-    position: fixed; bottom: 10%; right: -5%;
-    width: 50vw; height: 50vw;
-    background: rgba(200, 140, 255, 0.25); /* 柔紫色 */
-    border-radius: 50%; filter: blur(130px); z-index: -1;
-}
-
-.bg-shape3 {
-    position: fixed; top: 40%; left: 30%;
-    width: 40vw; height: 40vw;
-    background: rgba(255, 170, 120, 0.15); /* 蜜桃暖色 */
-    border-radius: 50%; filter: blur(140px); z-index: -1;
-}
-
-/* 毛玻璃核心 */
-.apple-glass {
-    background: var(--glass-bg);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
-    backdrop-filter: blur(40px) saturate(200%);
-    border: 1px solid var(--glass-border);
-    border-radius: 28px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    padding: 2rem;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.apple-glass:hover {
-    transform: translateY(-4px); /* 改为向上微微浮起，手感更细腻 */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-}
-
-/* 导航栏：变薄变精致 */
+/* 导航栏：加宽文字间距 */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 2rem; /* 大幅减小上下高度 */
-    margin: 1.5rem auto 2.5rem auto;
-    max-width: 1100px;
-    border-radius: 100px; /* 胶囊形状 */
+    padding: 1rem 1.8rem;
+    margin-bottom: 2rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
 }
 
-nav a {
-    text-decoration: none;
+.nav-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
     color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /* 增加导航栏各模块的间距 */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem; /* 显著增加导航文字之间的间距 */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
     font-weight: 500;
-    margin-left: 2rem;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
     transition: color 0.2s;
 }
 
-nav a:hover { color: var(--accent-color); }
+.nav-links a:hover { color: var(--color-primary); }
 
-/* ==== 全新 Bento Box 网格系统 ==== */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(180px, auto); /* 调整了基础高度 */
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto 3rem auto;
-    padding: 0 1.5rem;
-}
-
-/* 新版比例：1 + 2 + 1 = 4列 */
-.bento-pic { grid-column: span 1; grid-row: span 1; padding: 0.5rem; display: flex;}
-.bento-hero { grid-column: span 2; grid-row: span 1; display: flex; flex-direction: column; justify-content: center;}
-.bento-connect { grid-column: span 1; grid-row: span 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;}
-
-/* 第二/三排比例：2 + 2 = 4列 */
-.bento-edu { grid-column: span 2; grid-row: span 1; }
-.bento-awards { grid-column: span 2; grid-row: span 1; }
-.bento-projects { grid-column: span 2; grid-row: span 1; }
-.bento-services { grid-column: span 2; grid-row: span 1; }
-
-/* 底部全宽：4列 */
-.bento-pubs { grid-column: span 4; grid-row: span 1; }
-
-/* 内部细节样式 */
-h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    letter-spacing: -0.01em;
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.theme-toggle-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
-/* 新的照片相框样式，替代突兀的圆 */
+/* === 核心：非对称双列网格布局 === */
+.main-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* 左侧栏：支持吸顶效果 */
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 高级感头像：去除边框，加入弥散阴影与微圆角 */
 .profile-pic {
-    width: 100%; height: 100%;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
-    border-radius: 22px; /* 和外部大圆角形成呼应 */
-}
-
-/* 渐变名字，打破色彩单一 */
-.gradient-text {
-    background: linear-gradient(135deg, #0071e3 0%, #a855f7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-text h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    border-radius: 28px; /* 更加高级的 Squircle (超椭圆) 质感 */
+    box-shadow: var(--shadow-lg); /* 强烈的弥散立体阴影 */
+    border: none; 
     margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+    transform: translateY(-3px);
 }
 
-/* 小标签：增加彩色点缀 */
+.profile-info h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+
 .tag {
     display: inline-block;
-    background: rgba(0, 113, 227, 0.1);
-    color: var(--accent-color);
-    padding: 0.2rem 0.8rem;
-    border-radius: 12px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.profile-bio {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* 按钮纵向排列，更紧凑的高级感 */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
 }
 
-.icon-btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 45px; height: 45px; border-radius: 50%;
-    background: white; color: var(--text-main);
-    text-decoration: none; font-size: 1.2rem; margin: 0.4rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.04); transition: all 0.3s;
+.btn-outline {
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
-.icon-btn:hover { background: var(--accent-color); color: white; transform: translateY(-3px);}
-
-.cv-btn {
-    display: inline-block; margin-top: 0.8rem; padding: 0.6rem 1.5rem;
-    background: var(--text-main); color: white;
-    text-decoration: none; border-radius: 30px; font-weight: 500; font-size: 0.95rem;
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
-.cv-btn:hover { background: var(--accent-color); }
 
-.item-list { padding-left: 1rem; color: var(--text-light); font-size: 0.95rem; }
-.item-list li { margin-bottom: 0.5rem; }
+.btn-primary {
+    background: var(--color-primary);
+    color: #FFFFFF !important;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
 
-/* 响应式排版适配 */
-@media (max-width: 900px) {
-    .bento-grid { grid-template-columns: repeat(2, 1fr); }
-    .bento-pic { grid-column: span 1; }
-    .bento-connect { grid-column: span 1; }
-    .bento-hero, .bento-edu, .bento-awards, .bento-projects, .bento-services, .bento-pubs { grid-column: span 2; }
+/* 卡片密度提升：缩小无用内边距 */
+.premium-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.premium-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.premium-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+}
+
+.color-edu i { color: var(--color-primary); }
+.color-pub i { color: var(--color-danger); }
+.color-proj i { color: var(--color-success); }
+.color-award i { color: var(--color-warning); }
+
+/* 高密度列表排版 */
+.list-item {
+    margin-bottom: 1.2rem;
+}
+.list-item:last-child { margin-bottom: 0; }
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.list-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.list-meta {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.list-subtitle {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+ul.bullet-list {
+    list-style-type: none;
+}
+ul.bullet-list li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.2rem;
+}
+ul.bullet-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* 微交互卡片压缩空间 */
+.inner-card {
+    background: var(--bg-body);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s;
+}
+.inner-card:hover { border-color: var(--color-primary); }
+
+.pub-row { display: flex; gap: 0.8rem; }
+.pub-number { 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800; 
+    color: var(--color-danger); 
+    font-size: 1rem;
+}
+.pub-links { margin-top: 0.6rem; display: flex; gap: 0.5rem; }
+.pub-links a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+.pub-links a:hover {
+    background: var(--text-main);
+    color: var(--bg-card);
+}
+
+/* 博客页面的高密度卡片 */
+.blog-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+.blog-post:hover {
+    transform: translateX(4px);
+    border-color: var(--color-primary);
+}
+
+.blog-post-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+}
+.blog-post-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+.blog-post-desc { color: var(--text-muted); font-size: 0.9rem; }
+.blog-post-date { 
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-muted); 
+    font-size: 0.85rem; 
+    font-weight: 500;
+    text-align: right;
+    min-width: 110px;
+}
+
+/* 响应式：屏幕较小时回退为单列 */
+@media (max-width: 850px) {
+    .main-layout { grid-template-columns: 1fr; gap: 1rem; }
+    .sidebar { position: static; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+    .profile-info { flex: 1; min-width: 250px; }
+    .btn-group { flex-direction: row; flex-wrap: wrap; width: 100%; }
+    .btn { width: auto; flex: 1; }
+    .nav-links { gap: 1rem; }
+    .nav-right { gap: 1.5rem; }
 }
 @media (max-width: 600px) {
-    .bento-grid { grid-template-columns: 1fr; }
-    .bento-pic, .bento-connect { grid-column: span 1; }
-    .bento-hero { grid-column: span 1; text-align: center; }
+    .sidebar { flex-direction: column; text-align: center; }
+    .nav-right { flex-direction: column; gap: 1rem; }
 }

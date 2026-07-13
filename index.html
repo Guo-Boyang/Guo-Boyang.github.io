@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,140 +9,163 @@
 </head>
 <body>
 
-    <!-- 三色极光光晕背景 -->
-    <div class="bg-shape1"></div>
-    <div class="bg-shape2"></div>
-    <div class="bg-shape3"></div>
-
-    <!-- 更薄、更精致的胶囊导航栏 -->
-    <nav class="apple-glass">
-        <div style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em;">Boyang Guo</div>
-        <div>
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="cv.pdf" target="_blank">CV</a>
+<div class="container">
+    
+    <!-- 加宽间距的导航栏 -->
+    <nav>
+        <div class="nav-brand">Boyang Guo</div>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <a href="cv.pdf" target="_blank">CV</a>
+            </div>
+            <button class="theme-toggle-btn" id="theme-toggle">
+                <i class="fas fa-moon"></i> <span>Dark</span>
+            </button>
         </div>
     </nav>
 
-    <!-- 完美比例网格排版系统 -->
-    <div class="bento-grid">
+    <!-- 核心布局：双列网格 -->
+    <div class="main-layout">
         
-        <!-- 卡片1：照片画框（取代突兀的椭圆） -->
-        <div class="apple-glass bento-pic">
+        <!-- 左侧边栏：头像与个人信息 -->
+        <aside class="sidebar">
             <img src="profile.jpg" alt="Profile" class="profile-pic">
-        </div>
-
-        <!-- 卡片2：名字与简介（变宽，不再显得太空） -->
-        <div class="apple-glass bento-hero">
-            <div class="hero-text">
+            <div class="profile-info">
                 <span class="tag">ECE Undergraduate @ SJTU</span>
-                <h1>Hi, I'm <span class="gradient-text">Boyang Guo</span></h1>
-                <p style="margin-top: 0.5rem; color: var(--text-light);">
-                    I am passionate about applying mathematical models to real-world engineering. My research interests lie broadly in mathematical foundations and applications in machine learning.
+                <h1>Boyang Guo</h1>
+                <p class="profile-bio">
+                    Passionate about applying mathematical models to real-world engineering. My research interests lie broadly in mathematical foundations and applications in AI & Robotics.
                 </p>
-            </div>
-        </div>
-
-        <!-- 卡片3：联系方式 -->
-        <div class="apple-glass bento-connect">
-            <h2 style="margin-bottom: 0.5rem;">Connect</h2>
-            <div>
-                <a href="mailto:tonydomo@sjtu.edu.cn" class="icon-btn"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/Guo-Boyang" class="icon-btn"><i class="fab fa-github"></i></a>
-            </div>
-            <a href="cv.pdf" class="cv-btn" target="_blank">View CV</a>
-        </div>
-
-        <!-- 卡片4：教育背景（拉宽，有充足空间） -->
-        <div class="apple-glass bento-edu">
-            <h2><i class="fas fa-graduation-cap" style="color: var(--accent-color);"></i> Education</h2>
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;">
-                    <span>Shanghai Jiao Tong University</span>
-                    <span style="font-size: 0.85rem; color: var(--accent-color);">2024 - 2028</span>
+                <div class="btn-group">
+                    <a href="mailto:tonydomo@sjtu.edu.cn" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
+                    <a href="https://github.com/Guo-Boyang" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="cv.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-file-pdf"></i> View Full CV</a>
                 </div>
-                <div style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 0.5rem;">Global College, B.S. in Electrical and Computer Engineering</div>
-                <ul class="item-list">
-                    <li><strong>GPA:</strong> -.-/4.0 (Top 5%)</li>
-                    <li><strong>Core Courses:</strong> Data Structures, Signals and Systems, Computer Organization</li>
-                </ul>
-                <div style="font-weight: 600; display: flex; justify-content: space-between;">
-                    <span>University of Michigan</span>
-                    <span style="font-size: 0.85rem; color: var(--accent-color);">2026 - 2028</span>
+            </div>
+        </aside>
+
+        <!-- 右侧内容区：高密度数据流 -->
+        <main class="content">
+            
+            <!-- 教育背景 -->
+            <section class="premium-card">
+                <h2 class="color-edu"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="list-title">Shanghai Jiao Tong University</span>
+                        <span class="list-meta">2024 - 2028 (Tentative)</span>
+                    </div>
+                    <div class="list-subtitle">Global College, B.S. in Electrical and Computer Engineering</div>
+                    <ul class="bullet-list">
+                        <li><strong>GPA:</strong> -.-/4.0 (Top 5%)</li>
+                        <li><strong>Core Courses:</strong> Data Structures and Algorithms, Signals and Systems, Computer Organization</li>
+                    </ul>
                 </div>
-                <div style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 0.5rem;">B.S. in Mathematics (Honors Program)</div>
-                <ul class="item-list">
-                    <li><strong>GPA:</strong> -.-/4.0</li>
-                    <li><strong>Core Courses:</strong> Real Analysis, Differential Geometry, Topology</li>
-                </ul>
-            </div>
-        </div>
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="list-title">University of Michigan</span>
+                        <span class="list-meta">2026 - 2028 (Tentative)</span>
+                    </div>
+                    <div class="list-subtitle">B.S. in Mathematics (Honors Program)</div>
+                    <ul class="bullet-list">
+                        <!-- <li><strong>GPA:</strong> -.-/4.0</li> -->
+                        <li><strong>Core Courses:</strong> Real Analysis, Differential Geometry, Topology</li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- 卡片5：荣誉与奖项 (新增) -->
-        <div class="apple-glass bento-awards">
-            <h2><i class="fas fa-award" style="color: #f59e0b;"></i> Honors & Awards</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 0.8rem;">
-                    <div style="font-weight: 600; font-size: 0.95rem;">Undergraduate Excellent Scholarship</div>
-                    <div style="font-size: 0.85rem; color: var(--text-light);">SJTU | 2025</div>
-                </li>
-                <li style="margin-bottom: 0.8rem;">
-                    <div style="font-weight: 600; font-size: 0.95rem;">GC Student Development Scholarship (Service Program)</div>
-                    <div style="font-size: 0.85rem; color: var(--text-light);">Global College, SJTU | 2025</div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- 卡片6：项目经历 -->
-        <div class="apple-glass bento-projects">
-            <h2><i class="fas fa-microchip" style="color: #8b5cf6;"></i> Selected Projects (Under Construction)</h2>
-            <div style="margin-bottom: 1rem;">
-                <div style="font-weight: 600; font-size: 0.95rem;">Autonomous Robot Navigation</div>
-                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.3rem;">
-                    Designed an obstacle avoidance algorithm using Reinforcement Learning. Improved success rate by 15% in complex simulated environments.
-                </p>
-            </div>
-            <div>
-                <div style="font-weight: 600; font-size: 0.95rem;">Smart IoT Sensor Hub</div>
-                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.3rem;">
-                    Built a low-power hub with Raspberry Pi and C++ to handle real-time signal processing.
-                </p>
-            </div>
-        </div>
-
-        <!-- 卡片7：社会服务与活动 (新增) -->
-        <div class="apple-glass bento-services">
-            <h2><i class="fas fa-hands-helping" style="color: #10b981;"></i> Services & Activities</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 0.8rem;">
-                    <div style="font-weight: 600; font-size: 0.95rem;">Assistant Vice President of Project Department</div>
-                    <div style="font-size: 0.85rem; color: var(--text-light);">SSTIA, Global College | Fall 2024 - Present</div>
-                </li>
-                <li style="margin-bottom: 0.8rem;">
-                    <div style="font-weight: 600; font-size: 0.95rem;">Teaching Assistant</div>
-                    <div style="font-size: 0.85rem; color: var(--text-light);">MATH2850J Linear Algebra and Functions of Multiple Variables (Honors) | Summer 2026</div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- 卡片8：学术发表 (全宽) -->
-        <div class="apple-glass bento-pubs">
-            <h2><i class="fas fa-book-open" style="color: #ef4444;"></i> Publications (Under Construction)</h2>
-            <div style="display: flex; gap: 1rem; align-items: start; margin-top: 1rem;">
-                <div style="background: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">[1]</div>
-                <div>
-                    <strong style="font-size: 1.05rem;">Paper Title Goes Here: An Innovative Approach in ECE</strong><br>
-                    <span style="color: var(--text-light); font-size: 0.95rem;"><u>Boyang Guo</u>, Co-author 1, Co-author 2.</span><br>
-                    <span style="font-size: 0.95rem;"><em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2024.</span><br>
-                    <div style="margin-top: 0.6rem;">
-                        <a href="#" style="color: var(--accent-color); text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-right: 1rem; background: rgba(0, 113, 227, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px;">[PDF]</a>
-                        <a href="#" style="color: var(--text-main); text-decoration: none; font-size: 0.85rem; font-weight: 600; background: white; padding: 0.3rem 0.8rem; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">[GitHub]</a>
+            <!-- 学术发表 -->
+            <section class="premium-card">
+                <h2 class="color-pub"><i class="fas fa-book-open"></i> Publications (Under Construction)</h2>
+                <div class="inner-card pub-row">
+                    <div class="pub-number">01</div>
+                    <div>
+                        <strong style="font-size: 1.05rem; font-family: 'Poppins', sans-serif;">Paper Title Goes Here: An Innovative Approach in ECE</strong><br>
+                        <span style="color: var(--text-muted); font-size: 0.9rem; display: inline-block; margin-top: 0.2rem;"><u>Boyang Guo</u>, Co-author 1, Co-author 2.</span><br>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); display: inline-block; margin-top: 0.1rem;"><em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2024.</span>
+                        <div class="pub-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
+            <!-- 项目经历 -->
+            <section class="premium-card">
+                <h2 class="color-proj"><i class="fas fa-microchip"></i> Selected Projects (Under Construction)</h2>
+                <div class="inner-card list-item">
+                    <div class="list-title" style="font-size: 0.95rem;">Autonomous Robot Navigation</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
+                        Designed an obstacle avoidance algorithm using Reinforcement Learning. Improved success rate by 15% in complex simulated environments.
+                    </p>
+                </div>
+                <div class="inner-card list-item" style="margin-bottom: 0;">
+                    <div class="list-title" style="font-size: 0.95rem;">Smart IoT Sensor Hub</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
+                        Built a low-power hub with Raspberry Pi and C++ to handle real-time signal processing.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 荣誉与活动 (内部再分为双列，极大化空间利用) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <section class="premium-card" style="margin-bottom: 0;">
+                    <h2 class="color-award"><i class="fas fa-award"></i> Awards</h2>
+                    <div class="inner-card list-item" style="padding: 0.8rem 1rem;">
+                        <div class="list-title" style="font-size: 0.9rem;">Undergraduate Excellent Scholarship</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">SJTU • 2025</div>
+                    </div>
+                    <div class="inner-card list-item" style="padding: 0.8rem 1rem; margin-bottom: 0;">
+                        <div class="list-title" style="font-size: 0.9rem;">GC Student Development Scholarship</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Global College • 2025</div>
+                    </div>
+                </section>
+
+                <section class="premium-card" style="margin-bottom: 0;">
+                    <h2 class="color-primary"><i class="fas fa-hands-helping"></i> Services</h2>
+                    <div class="inner-card list-item" style="padding: 0.8rem 1rem;">
+                        <div class="list-title" style="font-size: 0.9rem;">Assistant VP, Project Dept.</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">SSTIA • Fall 2024 - Present</div>
+                    </div>
+                    <div class="inner-card list-item" style="padding: 0.8rem 1rem; margin-bottom: 0;">
+                        <div class="list-title" style="font-size: 0.9rem;">Teaching Assistant</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">MATH2850J • Summer 2026</div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
     </div>
 
+</div>
+
+<!-- 一键明暗切换核心代码 -->
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    htmlElement.setAttribute('data-theme', currentTheme);
+    updateToggleBtn(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+        let theme = htmlElement.getAttribute('data-theme');
+        let newTheme = theme === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleBtn(newTheme);
+    });
+
+    function updateToggleBtn(theme) {
+        if (theme === 'dark') {
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>Light</span>';
+        } else {
+            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span>Dark</span>';
+        }
+    }
+</script>
 </body>
 </html>

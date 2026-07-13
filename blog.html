@@ -1,53 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Boyang Guo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
-    <!-- 同步三色极光光晕背景 -->
-    <div class="bg-shape1"></div>
-    <div class="bg-shape2"></div>
-    <div class="bg-shape3"></div>
+<div class="container">
 
-    <nav class="apple-glass">
-        <div style="font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em;">Boyang Guo</div>
-        <div>
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="cv.pdf" target="_blank">CV</a>
+    <!-- 加宽间距的导航栏 -->
+    <nav>
+        <div class="nav-brand">Boyang Guo</div>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <a href="cv.pdf" target="_blank">CV</a>
+            </div>
+            <button class="theme-toggle-btn" id="theme-toggle">
+                <i class="fas fa-moon"></i> <span>Dark</span>
+            </button>
         </div>
     </nav>
 
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
+    <!-- 紧凑居中的博客区域 -->
+    <main style="max-width: 800px; margin: 0 auto;">
         
-        <header class="apple-glass" style="text-align: center; margin-bottom: 2rem;">
-            <h1 style="font-weight: 700; font-size: 2.2rem; margin-bottom: 0.5rem;">Notes & Thoughts</h1>
-            <p style="color: var(--text-light);">Mathematics, Engineering, and Coding.</p>
+        <header class="premium-card" style="text-align: center; padding: 2.5rem 2rem; margin-bottom: 2rem;">
+            <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem;">Notes & Thoughts</h1>
+            <p style="color: var(--text-muted); font-size: 1rem;">Mathematics, Engineering, and Coding.</p>
         </header>
 
-        <article class="apple-glass" style="margin-bottom: 1.5rem;">
-            <a href="#" style="text-decoration: none; color: inherit;">
-                <span class="tag" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Signal Processing</span>
-                <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 500; float: right;">March 15, 2024</span>
-                <h3 style="margin: 0.5rem 0; font-size: 1.2rem;">Understanding the Fourier Transform</h3>
-                <p style="color: var(--text-light); font-size: 0.95rem;">An intuitive breakdown of how we map signals from the time domain to the frequency domain...</p>
+        <div>
+            <a href="#" class="blog-post">
+                <div class="blog-post-content">
+                    <div class="blog-post-title">
+                        <span class="blog-post-tag">Signal Processing</span>
+                        Understanding the Fourier Transform
+                    </div>
+                    <div class="blog-post-desc">An intuitive breakdown of how we map signals from the time domain to the frequency domain...</div>
+                </div>
+                <div class="blog-post-date"><i class="far fa-calendar-alt"></i> Mar 15, 2024</div>
             </a>
-        </article>
 
-        <article class="apple-glass" style="margin-bottom: 1.5rem;">
-            <a href="#" style="text-decoration: none; color: inherit;">
-                <span class="tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Hardware</span>
-                <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 500; float: right;">February 20, 2024</span>
-                <h3 style="margin: 0.5rem 0; font-size: 1.2rem;">My Experience Building a RISC-V CPU</h3>
-                <p style="color: var(--text-light); font-size: 0.95rem;">Documenting the challenges and bugs I encountered while implementing a pipeline RISC-V processor...</p>
+            <a href="#" class="blog-post">
+                <div class="blog-post-content">
+                    <div class="blog-post-title">
+                        <span class="blog-post-tag" style="color: var(--color-success); background: rgba(5, 150, 105, 0.1);">Hardware</span>
+                        My Experience Building a RISC-V CPU
+                    </div>
+                    <div class="blog-post-desc">Documenting the challenges and bugs I encountered while implementing a pipeline RISC-V processor...</div>
+                </div>
+                <div class="blog-post-date"><i class="far fa-calendar-alt"></i> Feb 20, 2024</div>
             </a>
-        </article>
+        </div>
 
-    </div>
+    </main>
 
+</div>
+
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    htmlElement.setAttribute('data-theme', currentTheme);
+    updateToggleBtn(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+        let theme = htmlElement.getAttribute('data-theme');
+        let newTheme = theme === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleBtn(newTheme);
+    });
+
+    function updateToggleBtn(theme) {
+        if (theme === 'dark') {
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>Light</span>';
+        } else {
+            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span>Dark</span>';
+        }
+    }
+</script>
 </body>
 </html>
